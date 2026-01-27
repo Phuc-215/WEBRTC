@@ -1,7 +1,7 @@
 {
   "name": "webrtc-group-call",
   "version": "1.0.0",
-  "description": "WebRTC Group Call with TURN server support",
+  "description": "WebRTC Group Call Application",
   "main": "server/server.js",
   "engines": {
     "node": "18.x",
@@ -9,19 +9,8 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
-    "test": "node tests/signaling.test.js",
-    "heroku-postbuild": "echo 'Build completed'"
+    "dev": "nodemon server/server.js"
   },
-  "keywords": [
-    "webrtc",
-    "video-call",
-    "group-call",
-    "turn",
-    "heroku"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "ws": "^8.13.0",
