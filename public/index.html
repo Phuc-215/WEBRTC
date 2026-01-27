@@ -1,35 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebRTC Group Call</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>WebRTC Group Call</h1>
-    
-    <!-- Login Section -->
-    <div id="login-section">
-        <input id="nameInput" placeholder="Your name" />
-        <input id="roomInput" placeholder="Room ID" />
-        <button id="joinBtn">Join Room</button>
-    </div>
-    
-    <!-- Room Section -->
-    <div id="room-section" style="display:none;">
-        <h2>Room: <span id="roomName"></span></h2>
-        <div>Members: <span id="memberList"></span></div>
-        <button id="startCallBtn">Start Group Call</button>
-        <button id="leaveBtn">Leave Room</button>
-        
-        <!-- Video Grid -->
-        <div id="video-grid">
-            <div class="video-wrapper">
-                <video id="localVideo" autoplay playsinline muted></video>
-                <span>You (Local)</span>
+    <div class="container">
+        <header>
+            <h1>🎥 WebRTC Group Call</h1>
+            <p class="subtitle">Real-time video conferencing with TURN support</p>
+        </header>
+
+        <!-- Login Section -->
+        <div id="login-section" class="section">
+            <div class="card">
+                <h2>Join a Room</h2>
+                <div class="form-group">
+                    <label for="nameInput">Your Name</label>
+                    <input 
+                        type="text" 
+                        id="nameInput" 
+                        placeholder="Enter your name" 
+                        maxlength="20"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="roomInput">Room ID</label>
+                    <input 
+                        type="text" 
+                        id="roomInput" 
+                        placeholder="Enter room ID" 
+                        maxlength="20"
+                    />
+                </div>
+                <button id="joinBtn" class="btn btn-primary">
+                    Join Room
+                </button>
+            </div>
+        </div>
+
+        <!-- Room Section -->
+        <div id="room-section" class="section" style="display:none;">
+            <div class="room-header">
+                <div class="room-info">
+                    <h2>Room: <span id="roomName"></span></h2>
+                    <p class="members">
+                        <span class="icon">👥</span>
+                        Members: <span id="memberList"></span>
+                    </p>
+                    <p class="connection-status">
+                        Status: <span id="connectionStatus">Not Connected</span>
+                    </p>
+                </div>
+                <div class="room-controls">
+                    <button id="startCallBtn" class="btn btn-success">
+                        📹 Start Group Call
+                    </button>
+                    <button id="hangupBtn" class="btn btn-warning" style="display:none;">
+                        📴 Hang Up
+                    </button>
+                    <button id="leaveBtn" class="btn btn-danger">
+                        🚪 Leave Room
+                    </button>
+                </div>
+            </div>
+
+            <!-- Video Grid -->
+            <div id="video-grid" class="video-grid">
+                <div class="video-wrapper local-video">
+                    <video id="localVideo" autoplay playsinline muted></video>
+                    <div class="video-label">
+                        <span class="name">You (Local)</span>
+                        <span class="status">🔴 Not streaming</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div id="stats-section" class="stats-section" style="display:none;">
+                <h3>Connection Statistics</h3>
+                <div id="stats-content"></div>
             </div>
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

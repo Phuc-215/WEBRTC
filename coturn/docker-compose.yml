@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  coturn:
+    image: coturn/coturn:latest
+    container_name: webrtc-turn-server
+    restart: unless-stopped
+    network_mode: host
+    
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf:ro
+      - ./logs:/var/log
+    
+    environment:
+      - DETECT_EXTERNAL_IP=yes
+      - DETECT_RELAY_IP=yes
+    
+    command:
+      - "-c"
+      - "/etc/coturn/turnserver.conf"
+    
+    # Ports (only needed if not using host network)
+    # ports:
+    #   - "3478:3478/tcp"
+    #   - "3478:3478/udp"
+    #   - "5349:5349/tcp"
+    #   - "5349:5349/udp"
+    #   - "10000-20000:10000-20000/udp"
+    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
