@@ -15,8 +15,8 @@ export const ICE_CONFIG = {
                 'turn:free.expressturn.com:3478?transport=tcp',
                 'turns:free.expressturn.com:5349?transport=tcp'
             ],
-            username: 'efPU52K4SLOQ34W2QY',
-            credential: '1TJPNFxHKXrZfelz'
+            username: '000000002084847116',
+            credential: 'bAgOXm2yT6fIQb8VMx+pLN/vIBE='
         }
     ],
     
