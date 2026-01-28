@@ -10,14 +10,16 @@ export const ICE_CONFIG = {
         
         // TURN server from ExpressTurn (free tier)
         {
-            urls: [
-                'turn:free.expressturn.com:3478?transport=udp',
-                'turn:free.expressturn.com:3478?transport=tcp',
-                'turns:free.expressturn.com:5349?transport=tcp'
-            ],
-            username: '000000002084847116',
-            credential: 'bAgOXm2yT6fIQb8VMx+pLN/vIBE='
+            urls: 'turn:42.119.46.128:3478',  // Your TURN server
+            username: 'myusername',
+            credential: 'mypassword'
+        },
+        {
+            urls: 'turn:42.119.46.128:3478?transport=tcp',  // TCP transport
+            username: 'myusername',
+            credential: 'mypassword'
         }
+
     ],
     
     // ICE configuration

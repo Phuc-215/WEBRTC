@@ -6,13 +6,11 @@ module.exports = {
         { urls: 'stun:stun1.l.google.com:19302' }
     ],
     
-    // ExpressTurn TURN servers
     turnServers: [
         {
             urls: [
-                'turn:free.expressturn.com:3478?transport=udp',
-                'turn:free.expressturn.com:3478?transport=tcp',
-                'turns:free.expressturn.com:5349?transport=tcp'
+                `turn:${process.env.TURN_HOST}?transport=udp`,
+                `turn:${process.env.TURN_HOST}?transport=tcp`,
             ],
             username: process.env.TURN_USERNAME,
             credential: process.env.TURN_PASSWORD
