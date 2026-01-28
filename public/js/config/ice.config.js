@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 export const ICE_CONFIG = {
     iceServers: [
         { urls: 'stun:stun.relay.metered.ca:80' },
