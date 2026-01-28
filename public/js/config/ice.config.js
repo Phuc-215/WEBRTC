@@ -2,22 +2,22 @@ export const ICE_CONFIG = {
     iceServers: [
         { urls: 'stun:stun.relay.metered.ca:80' },
         {
-            urls: `turn:${process.env.TURN_HOST}`,
+            urls: "turn:global.relay.metered.ca:80",
             username: "86d5854119ef7a0d093d655a",
             credential: "igfkkKW85At1BeDP",
         },
         {
-            urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
+            urls: "turn:global.relay.metered.ca:80?transport=tcp",
             username: "86d5854119ef7a0d093d655a",
             credential: "igfkkKW85At1BeDP",
         },
         {
-            urls: `turn:${process.env.TURN_HOST}`,
+            urls: "turn:global.relay.metered.ca:443",
             username: "86d5854119ef7a0d093d655a",
             credential: "igfkkKW85At1BeDP",
         },
         {
-            urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
+            urls: "turn:global.relay.metered.ca:443?transport=tcp",
             username: "86d5854119ef7a0d093d655a",
             credential: "igfkkKW85At1BeDP",
         },
