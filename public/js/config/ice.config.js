@@ -1,12 +1,12 @@
 export const ICE_CONFIG = {
     iceServers: [
         // STUN servers (free, for NAT traversal)
-        { 
-            urls: 'stun:stun.l.google.com:19302' 
-        },
-        { 
-            urls: 'stun:stun1.l.google.com:19302' 
-        },
+        // { 
+        //     urls: 'stun:stun.l.google.com:19302' 
+        // },
+        // { 
+        //     urls: 'stun:stun1.l.google.com:19302' 
+        // },
         
         // TURN server from ExpressTurn (free tier)
         {
