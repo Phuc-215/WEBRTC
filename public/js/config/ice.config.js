@@ -1,5 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 
 export const ICE_CONFIG = {
     iceServers: [
