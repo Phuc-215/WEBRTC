@@ -2,19 +2,32 @@ require('dotenv').config();
 
 module.exports = {
     stunServers: [
-        { urls: 'stun:stun.l.google.com:19302' },
-        { urls: 'stun:stun1.l.google.com:19302' }
+      {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
     ],
     
     turnServers: [
-        {
-            urls: [
-                `turn:${process.env.TURN_HOST}?transport=udp`,
-                `turn:${process.env.TURN_HOST}?transport=tcp`,
-            ],
-            username: process.env.TURN_USERNAME,
-            credential: process.env.TURN_PASSWORD
-        }
+      {
+        urls: `turn:${process.env.TURN_HOST}:80`,
+        username: process.env.TURN_USERNAME,
+        credential: process.env.TURN_CREDENTIAL,
+      },
+      {
+        urls: `turn:${process.env.TURN_HOST}:80?transport=tcp`,
+        username: process.env.TURN_USERNAME,
+        credential: process.env.TURN_CREDENTIAL,
+      },
+      {
+        urls: `turn:${process.env.TURN_HOST}:443`,
+        username: process.env.TURN_USERNAME,
+        credential: process.env.TURN_CREDENTIAL,
+      },
+      {
+        urls: `turn:${process.env.TURN_HOST}:443?transport=tcp`,
+        username: process.env.TURN_USERNAME,
+        credential: process.env.TURN_CREDENTIAL,
+      },
     ],
     
     getIceServers() {
@@ -22,6 +35,6 @@ module.exports = {
     },
     
     // Provider info
-    provider: 'ExpressTurn',
-    freeNode: 'free.expressturn.com'
+    provider: 'Metered.ca (Free Tier)',
+    freeNode: 'global.relay.metered.ca',
 };

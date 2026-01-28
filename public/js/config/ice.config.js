@@ -1,25 +1,26 @@
 export const ICE_CONFIG = {
     iceServers: [
-        // STUN servers (free, for NAT traversal)
-        // { 
-        //     urls: 'stun:stun.l.google.com:19302' 
-        // },
-        // { 
-        //     urls: 'stun:stun1.l.google.com:19302' 
-        // },
-        
-        // TURN server from ExpressTurn (free tier)
+        { urls: 'stun:stun.relay.metered.ca:80' },
         {
-            urls: 'turn:42.119.46.128:3478',  // Your TURN server
-            username: 'myusername',
-            credential: 'mypassword'
+            urls: `turn:${process.env.TURN_HOST}`,
+            username: process.env.TURN_USERNAME,
+            credential: process.env.TURN_CREDENTIAL,
         },
         {
-            urls: 'turn:42.119.46.128:3478?transport=tcp',  // TCP transport
-            username: 'myusername',
-            credential: 'mypassword'
-        }
-
+            urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
+            username: process.env.TURN_USERNAME,
+            credential: process.env.TURN_CREDENTIAL,
+        },
+        {
+            urls: `turn:${process.env.TURN_HOST}`,
+            username: process.env.TURN_USERNAME,
+            credential: process.env.TURN_CREDENTIAL,
+        },
+        {
+            urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
+            username: process.env.TURN_USERNAME,
+            credential: process.env.TURN_CREDENTIAL,
+        },
     ],
     
     // ICE configuration
