@@ -5,23 +5,23 @@ export const ICE_CONFIG = {
         { urls: 'stun:stun.relay.metered.ca:80' },
         {
             urls: `turn:${process.env.TURN_HOST}`,
-            username: process.env.TURN_USERNAME,
-            credential: process.env.TURN_CREDENTIAL,
+            username: "86d5854119ef7a0d093d655a",
+            credential: "igfkkKW85At1BeDP",
         },
         {
             urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
-            username: process.env.TURN_USERNAME,
-            credential: process.env.TURN_CREDENTIAL,
+            username: "86d5854119ef7a0d093d655a",
+            credential: "igfkkKW85At1BeDP",
         },
         {
             urls: `turn:${process.env.TURN_HOST}`,
-            username: process.env.TURN_USERNAME,
-            credential: process.env.TURN_CREDENTIAL,
+            username: "86d5854119ef7a0d093d655a",
+            credential: "igfkkKW85At1BeDP",
         },
         {
             urls: `turn:${process.env.TURN_HOST}?transport=tcp`,
-            username: process.env.TURN_USERNAME,
-            credential: process.env.TURN_CREDENTIAL,
+            username: "86d5854119ef7a0d093d655a",
+            credential: "igfkkKW85At1BeDP",
         },
     ],
     
